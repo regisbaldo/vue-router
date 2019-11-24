@@ -6,6 +6,7 @@ Vue.use(VueRouter)
 import App from './views/App.vue'
 import Hello from './views/Hello.vue'
 import Home from './views/Home.vue'
+import UsersIndex from './views/UsersIndex.vue'
 import NotFound from './views/NotFound.vue'
 
 
@@ -26,6 +27,11 @@ const router = new VueRouter({
             path: "*",
             name: '404',
             component: NotFound,
+        },
+        {
+            path: "users",
+            name: "users.index",
+            component: UsersIndex,
         }
     ],
 });

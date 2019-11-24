@@ -13,6 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+Route::get('/users', function(){
+    if(rand(1,10)< 5){
+        abort(500, "Erro ao listar usuários");
+    }
+return factory('App\User',10)->make();
 });
